@@ -1,30 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
     tools:context=".ShowSensorActivity">
 
-    <TextView
-        android:id="@+id/textViewSensorValues"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/id_text2_section"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@id/listViewSensorInfo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_alignParentTop="true"
+        android:background="#FFF59D"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/textViewSensorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensor name:"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp"/>
+    </LinearLayout>
 
-    <ListView
-        android:id="@+id/listViewSensorInfo"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/id_info_section"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="1dp" />
-    <ListView
-        android:id="@+id/listViewSensorValues"
-        android:layout_width="0dp"
+        android:layout_below="@+id/id_text2_section"
+        android:background="#94F4DC"
+        android:padding="10dp">
+        <ListView
+            android:id="@+id/listViewSensorInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/id_text3_section"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textViewSensorValues"
-        tools:layout_editor_absoluteX="1dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_below="@+id/id_info_section"
+        android:background="#FFF59D"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/textViewSensorValues"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensor Values:"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/id_values_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_text3_section"
+        android:background="#94F4DC"
+        android:padding="10dp">
+        <ListView
+            android:id="@+id/listViewSensorValues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
